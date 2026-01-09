@@ -1,0 +1,30 @@
+{
+  "recommendations": [
+    "bierner.markdown-checkbox",
+    "bierner.markdown-emoji",
+    "bierner.markdown-footnotes",
+    "bierner.markdown-mermaid",
+    "bierner.markdown-preview-github-styles",
+    "DavidAnson.vscode-markdownlint",
+    "eamodio.gitlens",
+    "github.copilot-chat",
+    "github.github-vscode-theme",
+    "github.vscode-github-actions",
+    "github.vscode-pull-request-github",
+    "gruntfuggly.todo-tree",
+    "hediet.vscode-drawio",
+    "kilocode.kilo-code",
+    "ms-vscode-remote.remote-ssh-edit",
+    "ms-vscode-remote.remote-ssh",
+    "ms-vscode.remote-explorer",
+    "ms-vsliveshare.vsliveshare",
+    "pomdtr.excalidraw-editor",
+    "prettier.prettier-vscode",
+    "saeris.markdown-github-alerts",
+    "systemticks.c4-dsl-extension",
+    "takumii.markdowntable",
+    "timonwong.shellcheck",
+    "usernamehw.errorlens",
+    "yzhang.markdown-all-in-one"
+  ]
+}
