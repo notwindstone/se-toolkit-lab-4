@@ -235,7 +235,9 @@ Complete these steps if you can't [connect to your VM](../appendix/vm.md#connect
 
 #### 1.11.1. (NEW) Set up the `Docker` environment
 
-1. [Run using the `VS Code Terminal`](../appendix/vs-code.md#run-a-command-using-the-vs-code-terminal):
+1. Copy the [`.env.docker.example`](../../.env.docker.example) file to the `.env.docker.secret` file:
+
+   [Run using the `VS Code Terminal`](../appendix/vs-code.md#run-a-command-using-the-vs-code-terminal):
 
    ```terminal
    cp .env.docker.example .env.docker.secret
@@ -253,7 +255,11 @@ Complete these steps if you can't [connect to your VM](../appendix/vm.md#connect
 
 #### 1.11.2. (NEW) Start the services using `Docker Compose`
 
-1. [Run using the `VS Code Terminal`](../appendix/vs-code.md#run-a-command-using-the-vs-code-terminal):
+1. (`Windows` only) Open the `Docker Desktop` that you [installed](../appendix/docker.md#install-docker).
+
+2. Start services using the [`docker compose up` command](../appendix/docker-compose.md#docker-compose-up):
+
+   [Run using the `VS Code Terminal`](../appendix/vs-code.md#run-a-command-using-the-vs-code-terminal):
 
    ```terminal
    docker compose --env-file .env.docker.secret up --build
@@ -264,7 +270,7 @@ Complete these steps if you can't [connect to your VM](../appendix/vm.md#connect
    > [`Docker Compose`](../appendix/docker-compose.md) reads environment variables from `.env.docker.secret`
    > and uses them to configure the containers defined in [`docker-compose.yml`](../../docker-compose.yml).
 
-2. Wait for the services to start. You should see log output from the `app`, `postgres`, `pgadmin`, and `caddy` containers.
+3. Wait for the services to start. You should see log output from the `app`, `postgres`, `pgadmin`, and `caddy` containers.
 
    > **NOTE**
    >

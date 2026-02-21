@@ -33,7 +33,17 @@ All commands below assume a Unix shell: `Bash` (`Linux`, `WSL`) or `Zsh` (`macOS
 
 ## SSH daemon
 
+The `SSH` daemon (`sshd`) is a program that runs on the [remote host](./computer-networks.md#remote-host) and [listens](./linux.md#listen-on-a-port) for incoming `SSH` connections.
+
+You do not need to configure it — your [VM](./vm.md#your-vm) already has it running.
+
 ## `ssh-agent`
+
+`ssh-agent` is a background program that stores your private `SSH` key in memory for the duration of your session.
+
+When `ssh-agent` holds your key, you do not need to type a passphrase every time you connect.
+
+See [Start the `ssh-agent`](#start-the-ssh-agent) for setup instructions.
 
 ## Set up SSH
 
@@ -189,9 +199,34 @@ You can connect using the alias that you [added to your `SSH` config](#add-the-h
 
 ## Login
 
+`SSH` supports two authentication methods: [key-based](#login-without-password) (no password prompt) and [password-based](#login-with-password).
+
 ### Login without password
 
+Key-based authentication uses your private key to prove your identity. The remote host checks whether the matching public key is listed as authorized.
+
+This is the recommended method and is what [Set up SSH](#set-up-ssh) configures.
+
+1. [Set up SSH](#set-up-ssh).
+2. Ensure your public key is added to the remote host.
+3. [Connect to the VM](#connect-to-the-vm).
+
+You will not be asked for a password.
+
 ### Login with password
+
+Password-based authentication asks you to type the remote user's password.
+
+> [!NOTE]
+> Password authentication may be disabled on the VM. Use [key-based authentication](#login-without-password) instead.
+
+1. [Run using the `VS Code Terminal`](./vs-code.md#run-a-command-using-the-vs-code-terminal):
+
+   ```terminal
+   ssh -o PasswordAuthentication=yes root@<your-vm-ip-address>
+   ```
+
+2. Type the VM's root password when prompted.
 
 ## Common errors
 
