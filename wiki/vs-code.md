@@ -61,6 +61,7 @@
   - [Go to the definition](#go-to-the-definition)
   - [Rename a symbol](#rename-a-symbol)
 - [Set up `VS Code`](#set-up-vs-code)
+  - [Install `VS Code`](#install-vs-code)
   - [(`Windows` only) Set up running `VS Code` in `WSL`](#windows-only-set-up-running-vs-code-in-wsl)
   - [(`macOS` only) Add `VS Code` to `PATH`](#macos-only-add-vs-code-to-path)
 
