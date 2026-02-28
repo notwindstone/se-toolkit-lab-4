@@ -24,3 +24,20 @@ def test_filter_returns_interaction_with_matching_ids() -> None:
     result = _filter_by_item_id(interactions, 1)
     assert len(result) == 1
     assert result[0].id == 1
+
+def test_filter_excludes_interaction_with_different_learner_id() -> None:
+    """Boundary-value test: filter by item_id should ignore learner_id differences.
+    
+    An interaction with item_id=1 and learner_id=2 should appear when filtering
+    by item_id=1, confirming the filter operates on item_id only.
+    """
+    interactions = [
+        _make_log(id=1, learner_id=2, item_id=1),  # Different learner_id, matching item_id
+        _make_log(id=2, learner_id=1, item_id=2),  # Different item_id, should be excluded
+    ]
+    result = _filter_by_item_id(interactions, item_id=1)
+    
+    assert len(result) == 1
+    assert result[0].id == 1
+    assert result[0].item_id == 1
+    assert result[0].learner_id == 2
